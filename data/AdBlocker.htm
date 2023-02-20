@@ -596,11 +596,8 @@
         function refreshStatus() {
           // refresh status at required interval
           clearTimeout(hbTimer);
-          //loadStatus("?q");
-          if (isActive($('#mainTab'))) {
-            sendControl("getStats", "1")
-            getConfig('012');
-          }
+          loadStatus("?q");
+          if (isActive($('#mainTab'))) getConfig('012');
           hbTimer = setTimeout(refreshStatus, refreshInterval);
         }
         
